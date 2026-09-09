@@ -1,0 +1,2240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Grimoire de Fahem ✨📖</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..800&family=DM+Sans:wght@400;500;700&family=Press+Start+2P&family=Bebas+Neue&family=Shippori+Mincho:wght@600;800&family=Playfair+Display:ital,wght@0,600;1,600&family=Rock+Salt&family=Amiri:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-creme: #F8F3EA;
+      --parchment-sheet: #FFFDF9;
+      --border-warm: #E4D5C3;
+      --sunflower-color: #D6BA9C;
+      --ink-dark: #2A1712;
+      --ink-muted: #735D50;
+      --radius-book: 24px;
+
+      --theme-leather-1: #6B1111;
+      --theme-leather-2: #3E0606;
+      --theme-gold: #D6A535;
+      --theme-gold-soft: #F6E2B3;
+      --theme-accent: #9E1313;
+      --theme-badge-bg: #4A0808;
+      --theme-bullet: "✦";
+    }
+
+    /* 1. Trida */
+    .theme-trida {
+      --theme-leather-1: #78351B;
+      --theme-leather-2: #3F190B;
+      --theme-gold: #DAA520;
+      --theme-gold-soft: #FDE8BE;
+      --theme-accent: #BA3C19;
+      --theme-badge-bg: #4E1F0E;
+      --theme-bullet: "✦";
+    }
+
+    /* 2. Tajine */
+    .theme-tajine {
+      --theme-leather-1: #4A5D37;
+      --theme-leather-2: #24301B;
+      --theme-gold: #D4A359;
+      --theme-gold-soft: #F2DEBD;
+      --theme-accent: #B25329;
+      --theme-badge-bg: #2E3B21;
+      --theme-bullet: "🫒";
+    }
+
+    /* 3. Curry Japonais */
+    .theme-japanese {
+      --theme-leather-1: #36151B;
+      --theme-leather-2: #1A070B;
+      --theme-gold: #E6C280;
+      --theme-gold-soft: #FCE8D5;
+      --theme-accent: #C44545;
+      --theme-badge-bg: #4D1C24;
+      --theme-bullet: "🌸";
+    }
+    .theme-japanese body, .theme-japanese .double-page-spread {
+      font-family: 'Shippori Mincho', serif !important;
+    }
+    .theme-japanese .recipe-title, .theme-japanese .section-title {
+      font-family: 'Shippori Mincho', serif !important;
+      font-weight: 800;
+      color: #611C27 !important;
+    }
+
+    /* 4. Cookies (NANA) */
+    .theme-cookies {
+      --theme-leather-1: #1C191C;
+      --theme-leather-2: #0B0A0B;
+      --theme-gold: #E63946;
+      --theme-gold-soft: #FFB5A7;
+      --theme-accent: #C81D25;
+      --theme-badge-bg: #2B2529;
+      --theme-bullet: "🎸";
+    }
+    .theme-cookies body, .theme-cookies .double-page-spread {
+      font-family: 'DM Sans', sans-serif !important;
+      background: #0B0A0B !important;
+      color: #F1FAEE !important;
+    }
+    .theme-cookies .book-wrapper {
+      background: #1C191C !important;
+      border: 3px solid #E63946 !important;
+      box-shadow: 0 0 25px rgba(230, 57, 70, 0.3) !important;
+    }
+    .theme-cookies .double-page-spread {
+      background: #141214 !important;
+      border: 2px solid #E63946 !important;
+    }
+    .theme-cookies .recipe-title, .theme-cookies .section-title {
+      font-family: 'Rock Salt', cursive !important;
+      font-size: 1.25rem !important;
+      color: #E63946 !important;
+      letter-spacing: 1px;
+    }
+    .theme-cookies .macros-bar, .theme-cookies .recipe-image-wrap, .theme-cookies .macro-disclaimer {
+      background: #221E22 !important;
+      border: 1px solid #E63946 !important;
+      color: #FFF !important;
+    }
+    .theme-cookies .page-leaf-left {
+      border-right: 1.5px solid #E63946 !important;
+    }
+
+    /* 5. Frite-Omelette */
+    .theme-omelette {
+      --theme-leather-1: #8C6239;
+      --theme-leather-2: #4D331A;
+      --theme-gold: #E5B232;
+      --theme-gold-soft: #FDE8BE;
+      --theme-accent: #B87333;
+      --theme-badge-bg: #3D2612;
+      --theme-bullet: "🍳";
+    }
+
+    /* 6. Hachis Parmentier */
+    .theme-parmentier {
+      --theme-leather-1: #3A444C;
+      --theme-leather-2: #1E2328;
+      --theme-gold: #C5A059;
+      --theme-gold-soft: #EFE7D8;
+      --theme-accent: #8C2D19;
+      --theme-badge-bg: #272E34;
+      --theme-bullet: "🏛️";
+    }
+    .theme-parmentier body, .theme-parmentier .double-page-spread {
+      font-family: 'Playfair Display', serif !important;
+    }
+    .theme-parmentier .recipe-title, .theme-parmentier .section-title {
+      font-family: 'Playfair Display', serif !important;
+      font-style: italic;
+      color: #2C353D !important;
+    }
+
+    /* 7. Fasagne */
+    .theme-fasagne {
+      --theme-leather-1: #4F3818;
+      --theme-leather-2: #2B1E0C;
+      --theme-gold: #E5B232;
+      --theme-gold-soft: #FDE8BE;
+      --theme-accent: #C28E38;
+      --theme-badge-bg: #362510;
+      --theme-bullet: "🧀";
+    }
+
+    /* 8. Couscous */
+    .theme-couscous {
+      --theme-leather-1: #8C4A1C;
+      --theme-leather-2: #4A240A;
+      --theme-gold: #E5B232;
+      --theme-gold-soft: #FDE8BE;
+      --theme-accent: #C26B22;
+      --theme-badge-bg: #3D1E08;
+      --theme-bullet: "🥕";
+    }
+
+    /* 9. Soupe à l'oignon */
+    .theme-soupe {
+      --theme-leather-1: #59331C;
+      --theme-leather-2: #30180B;
+      --theme-gold: #E5B232;
+      --theme-gold-soft: #FDE8BE;
+      --theme-accent: #C27A38;
+      --theme-badge-bg: #361C0D;
+      --theme-bullet: "🥣";
+    }
+
+    /* 10. Toriel (Undertale) */
+    .theme-toriel {
+      --theme-leather-1: #111111;
+      --theme-leather-2: #000000;
+      --theme-gold: #FFFFFF;
+      --theme-gold-soft: #CCCCCC;
+      --theme-accent: #FFFFFF;
+      --theme-badge-bg: #222222;
+      --theme-bullet: "♥";
+    }
+    .theme-toriel body, .theme-toriel .double-page-spread {
+      font-family: 'Press Start 2P', monospace !important;
+      background: #000 !important;
+      color: #FFF !important;
+    }
+    .theme-toriel .book-wrapper {
+      background: #000 !important;
+      border: 4px solid #FFF !important;
+      box-shadow: 0 0 25px rgba(255,255,255,0.2) !important;
+    }
+    .theme-toriel .double-page-spread {
+      background: #111 !important;
+      border: 3px solid #FFF !important;
+      box-shadow: none !important;
+    }
+    .theme-toriel .page-leaf-left {
+      border-right: 2px solid #FFF !important;
+    }
+    .theme-toriel .recipe-title, 
+    .theme-toriel .section-title, 
+    .theme-toriel .page-indicator,
+    .theme-toriel .macro-value,
+    .theme-toriel .badge-spell {
+      font-family: 'Press Start 2P', monospace !important;
+      color: #FFF !important;
+      text-shadow: none !important;
+      border-color: #FFF !important;
+    }
+    .theme-toriel .macros-bar, 
+    .theme-toriel .recipe-image-wrap, 
+    .theme-toriel .macro-disclaimer,
+    .theme-toriel .portions-control {
+      background: #222 !important;
+      border: 2px solid #FFF !important;
+      color: #FFF !important;
+    }
+    .theme-toriel ul.ingredient-list li {
+      border-bottom: 1px dashed #555 !important;
+      font-size: 0.75rem !important;
+    }
+    .theme-toriel ol.steps-list li {
+      font-size: 0.75rem !important;
+      line-height: 1.6 !important;
+    }
+
+    /* 11. fastycrousty */
+    .theme-fastycrousty {
+      --theme-leather-1: #1B1226;
+      --theme-leather-2: #0B0710;
+      --theme-gold: #00F0FF;
+      --theme-gold-soft: #FF007F;
+      --theme-accent: #FF007F;
+      --theme-badge-bg: #2A163B;
+      --theme-bullet: "🔥";
+    }
+    .theme-fastycrousty body, .theme-fastycrousty .double-page-spread {
+      font-family: 'Bebas Neue', sans-serif !important;
+      letter-spacing: 1px;
+      background: #0B0710 !important;
+      color: #FFF !important;
+    }
+    .theme-fastycrousty .book-wrapper {
+      background: #1B1226 !important;
+      border: 4px solid #FF007F !important;
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.4) !important;
+    }
+    .theme-fastycrousty .double-page-spread {
+      background: #140E1F !important;
+      border: 3px solid #00F0FF !important;
+      box-shadow: none !important;
+    }
+    .theme-fastycrousty .page-leaf-left {
+      border-right: 2px solid #00F0FF !important;
+    }
+    .theme-fastycrousty .recipe-title, 
+    .theme-fastycrousty .section-title, 
+    .theme-fastycrousty .page-indicator,
+    .theme-fastycrousty .macro-value,
+    .theme-fastycrousty .badge-spell {
+      font-family: 'Bebas Neue', sans-serif !important;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      color: #00F0FF !important;
+      text-shadow: 2px 2px #FF007F !important;
+      border-color: #00F0FF !important;
+    }
+    .theme-fastycrousty .macros-bar, 
+    .theme-fastycrousty .recipe-image-wrap, 
+    .theme-fastycrousty .macro-disclaimer,
+    .theme-fastycrousty .portions-control {
+      background: #241933 !important;
+      border: 2px solid #00F0FF !important;
+      color: #FFF !important;
+    }
+    .theme-fastycrousty ul.ingredient-list li {
+      border-bottom: 1px dashed #4A2E63 !important;
+      font-size: 1.05rem !important;
+    }
+    .theme-fastycrousty ol.steps-list li {
+      font-size: 1.05rem !important;
+      line-height: 1.5 !important;
+    }
+
+    /* 12. patethon */
+    .theme-patethon {
+      --theme-leather-1: #2C3E50;
+      --theme-leather-2: #1A252F;
+      --theme-gold: #F1C40F;
+      --theme-gold-soft: #F9E79F;
+      --theme-accent: #E67E22;
+      --theme-badge-bg: #213140;
+      --theme-bullet: "🍝";
+    }
+    .theme-patethon body, .theme-patethon .double-page-spread {
+      font-family: 'DM Sans', sans-serif !important;
+    }
+    .theme-patethon .recipe-title, .theme-patethon .section-title {
+      font-family: 'Cinzel', serif !important;
+      color: #1A252F !important;
+    }
+
+    /* 13. Koka (DA Algérienne Traditionnelle) */
+    .theme-koka {
+      --theme-leather-1: #1B4D3E;
+      --theme-leather-2: #0E2921;
+      --theme-gold: #E5B232;
+      --theme-gold-soft: #FFF2CC;
+      --theme-accent: #1E6091;
+      --theme-badge-bg: #11352B;
+      --theme-bullet: "🫒";
+    }
+    .theme-koka body, .theme-koka .double-page-spread {
+      font-family: 'Amiri', serif !important;
+      background: #FDFBF7 !important;
+      color: #1A2621 !important;
+    }
+    .theme-koka .book-wrapper {
+      background: linear-gradient(135deg, #1B4D3E 0%, #0E2921 60%, #163832 100%) !important;
+      border: 4px solid #E5B232 !important;
+      box-shadow: 0 0 35px rgba(229, 178, 50, 0.4) !important;
+    }
+    .theme-koka .double-page-spread {
+      background: #FDFBF5 !important;
+      border: 3px solid #1E6091 !important;
+      background-image: 
+        linear-gradient(90deg, rgba(30, 96, 145, 0.04) 1px, transparent 1px),
+        linear-gradient(rgba(30, 96, 145, 0.04) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    .theme-koka .recipe-title {
+      font-family: 'Amiri', serif !important;
+      font-weight: 700;
+      color: #1B4D3E !important;
+      font-size: 1.8rem !important;
+    }
+    .theme-koka .section-title {
+      font-family: 'Amiri', serif !important;
+      font-weight: 700;
+      color: #1E6091 !important;
+      border-bottom: 2px solid #E5B232 !important;
+    }
+    .theme-koka .page-indicator {
+      font-family: 'Amiri', serif !important;
+      color: #1E6091 !important;
+    }
+    .theme-koka .page-leaf-left {
+      border-right: 2px solid #E4D5C3 !important;
+    }
+    .theme-koka .macros-bar, .theme-koka .recipe-image-wrap, .theme-koka .macro-disclaimer {
+      background: #F2EFE9 !important;
+      border: 1.5px solid #1E6091 !important;
+      color: #1A2621 !important;
+    }
+    .theme-koka .macro-value {
+      color: #1B4D3E !important;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-creme);
+      background-image: 
+        radial-gradient(circle at 50% 10%, rgba(125, 18, 18, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 15% 85%, rgba(214, 165, 53, 0.08) 0%, transparent 45%);
+      color: var(--ink-dark);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 16px 12px 90px;
+      overflow-x: hidden;
+      position: relative;
+      transition: background-color 0.4s ease;
+    }
+
+    .decor-sunflower {
+      position: fixed;
+      width: 210px;
+      height: 210px;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      color: var(--sunflower-color);
+      transition: opacity 0.3s ease;
+    }
+    .sunflower-left { top: 140px; left: -50px; transform: rotate(-15deg); }
+    .sunflower-right { top: 520px; right: -50px; transform: rotate(25deg); }
+
+    @media (max-width: 1100px) {
+      .decor-sunflower { opacity: 0.12; }
+    }
+
+    .spell-floating {
+      position: fixed;
+      font-size: 2.1rem;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.45;
+      animation: floatSpell 5.5s ease-in-out infinite alternate;
+    }
+    .sf-1 { top: 8%; left: 3%; animation-delay: 0s; }
+    .sf-2 { top: 38%; right: 3%; animation-delay: 1.5s; }
+    .sf-3 { top: 72%; left: 3%; animation-delay: 2.8s; font-size: 1.8rem; }
+    .sf-4 { top: 86%; right: 3%; animation-delay: 0.7s; font-size: 1.7rem; }
+
+    @keyframes floatSpell {
+      0% { transform: translateY(0px) rotate(-4deg); }
+      100% { transform: translateY(-16px) rotate(6deg); }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .badge-spell {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--theme-badge-bg);
+      color: var(--theme-gold-soft);
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 5px 16px;
+      border-radius: 99px;
+      margin-bottom: 8px;
+      border: 1.5px solid var(--theme-gold);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-family: 'Cinzel', serif;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+      transition: all 0.3s ease;
+    }
+
+    .witch-cauldron-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2px;
+    }
+
+    .cauldron-container {
+      position: relative;
+      width: 44px;
+      height: 40px;
+    }
+    .cauldron-body { font-size: 2rem; line-height: 1; }
+    .cauldron-smoke {
+      position: absolute;
+      top: -8px;
+      left: 14px;
+      font-size: 0.85rem;
+      animation: smokeRise 2.6s infinite ease-out;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .smoke-2 { left: 24px; animation-delay: 1.3s; }
+
+    @keyframes smokeRise {
+      0% { transform: translateY(0) scale(0.6); opacity: 0.8; }
+      50% { opacity: 0.5; }
+      100% { transform: translateY(-24px) scale(1.4); opacity: 0; }
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: var(--theme-leather-2);
+      margin-bottom: 2px;
+      transition: color 0.3s ease;
+    }
+
+    p.subtitle {
+      color: var(--ink-muted);
+      font-size: 0.92rem;
+      font-style: italic;
+    }
+
+    /* ========================================================= */
+    /* LIVRE FERMÉ : PREMIÈRE VERSION MÉDIÉVALE EN CUIR         */
+    /* ========================================================= */
+    .closed-book-scene {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      perspective: 1800px;
+      margin: 10px auto 30px;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: opacity 0.4s ease;
+    }
+
+    .closed-book-scene.hide-scene {
+      display: none;
+    }
+
+    .closed-book-cover {
+      position: relative;
+      width: 100%;
+      min-height: 600px;
+      background: linear-gradient(135deg, #5C1212 0%, #380808 50%, #200404 100%);
+      border-radius: 18px;
+      padding: 30px 24px;
+      border: 3.5px solid var(--theme-gold);
+      box-shadow: 
+        0 25px 60px rgba(25, 4, 4, 0.65),
+        inset 0 0 45px rgba(0, 0, 0, 0.75),
+        inset 0 0 15px rgba(214, 165, 53, 0.4);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      transform-origin: left center;
+      transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    }
+
+    .closed-book-cover:hover {
+      transform: translateY(-5px) scale(1.015);
+      box-shadow: 
+        0 30px 70px rgba(25, 4, 4, 0.75),
+        0 0 25px rgba(214, 165, 53, 0.45),
+        inset 0 0 45px rgba(0, 0, 0, 0.75);
+    }
+
+    .cover-opening-anim {
+      animation: openBookFlip 0.85s forwards cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes openBookFlip {
+      0% { transform: rotateY(0deg); opacity: 1; }
+      60% { opacity: 0.8; }
+      100% { transform: rotateY(-110deg) scale(0.95); opacity: 0; }
+    }
+
+    .cover-inner-border {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      border: 2px dashed rgba(214, 165, 53, 0.6);
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    .cover-center-seal {
+      margin: auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 34px 20px;
+      border: 2px solid var(--theme-gold);
+      border-radius: 16px;
+      background: rgba(18, 2, 2, 0.6);
+      box-shadow: 
+        inset 0 0 25px rgba(0,0,0,0.8),
+        0 0 25px rgba(214, 165, 53, 0.25);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .cover-main-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.1rem;
+      font-weight: 900;
+      line-height: 1.25;
+      color: #FFF2CC;
+      letter-spacing: 2px;
+      text-shadow: 
+        0 2px 4px rgba(0,0,0,0.9),
+        0 0 16px rgba(214, 165, 53, 0.8),
+        0 0 30px rgba(255, 213, 79, 0.4);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .cover-author-sub {
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      color: var(--theme-gold-soft);
+      font-style: italic;
+      letter-spacing: 1px;
+    }
+
+    .cover-strap-lock {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--theme-gold);
+      font-size: 1.3rem;
+      margin-top: 16px;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.7));
+    }
+
+    .cover-click-prompt {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: #EED9B2;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      animation: pulseGlow 2.5s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0% { opacity: 0.55; transform: scale(0.98); }
+      100% { opacity: 1; transform: scale(1.02); text-shadow: 0 0 10px rgba(214, 165, 53, 0.8); }
+    }
+
+    /* ========================================================= */
+    /* STRUCTURE DOUBLE PAGE (LIVRE OUVERT)                     */
+    /* ========================================================= */
+    .book-container-rel {
+      position: relative;
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: opacity 0.5s ease;
+    }
+
+    .book-container-rel.hide-opened {
+      display: none;
+    }
+
+    .book-wrapper {
+      position: relative;
+      width: 100%;
+      background: linear-gradient(135deg, var(--theme-leather-1) 0%, var(--theme-leather-2) 100%);
+      border-radius: var(--radius-book);
+      padding: 16px;
+      box-shadow: 
+        0 24px 60px -10px rgba(0, 0, 0, 0.5),
+        0 0 0 3px var(--theme-gold),
+        inset 0 0 35px rgba(0, 0, 0, 0.6);
+      perspective: 2000px;
+      transition: all 0.35s ease;
+    }
+
+    .btn-close-book {
+      position: absolute;
+      top: -16px;
+      right: 20px;
+      background: var(--theme-badge-bg);
+      color: var(--theme-gold-soft);
+      border: 1.5px solid var(--theme-gold);
+      border-radius: 99px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 20;
+      transition: all 0.2s ease;
+    }
+    .btn-close-book:hover {
+      background: var(--theme-accent);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .book-corner {
+      position: absolute;
+      width: 38px;
+      height: 38px;
+      border-color: var(--theme-gold);
+      border-style: solid;
+      pointer-events: none;
+      z-index: 6;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+    }
+    .book-corner::after {
+      content: "•";
+      position: absolute;
+      color: var(--theme-gold);
+      font-size: 0.8rem;
+    }
+    .corner-top-left { top: 6px; left: 6px; border-width: 4px 0 0 4px; border-top-left-radius: 12px; }
+    .corner-top-left::after { top: 2px; left: 4px; }
+    .corner-top-right { top: 6px; right: 6px; border-width: 4px 4px 0 0; border-top-right-radius: 12px; }
+    .corner-top-right::after { top: 2px; right: 4px; }
+    .corner-bottom-left { bottom: 6px; left: 6px; border-width: 0 0 4px 4px; border-bottom-left-radius: 12px; }
+    .corner-bottom-left::after { bottom: 2px; left: 4px; }
+    .corner-bottom-right { bottom: 6px; right: 6px; border-width: 0 4px 4px 0; border-bottom-right-radius: 12px; }
+    .corner-bottom-right::after { bottom: 2px; right: 4px; }
+
+    .book-inner-border {
+      border: 2px solid var(--theme-gold);
+      border-radius: 16px;
+      padding: 12px;
+      background: rgba(15, 6, 4, 0.35);
+      position: relative;
+    }
+
+    .theme-banner {
+      text-align: center;
+      color: var(--theme-gold-soft);
+      font-size: 0.82rem;
+      letter-spacing: 5px;
+      margin-bottom: 10px;
+      font-family: 'Cinzel', serif;
+      opacity: 0.95;
+      user-select: none;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+
+    .grimoire-search-bar {
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .grimoire-search-bar input {
+      width: 100%;
+      padding: 11px 18px 11px 40px;
+      border-radius: 10px;
+      border: 1.5px solid var(--theme-gold);
+      background: #FFFDF9;
+      color: var(--ink-dark);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      outline: none;
+      transition: all 0.2s ease;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+    }
+    .grimoire-search-bar input:focus {
+      box-shadow: 0 0 12px rgba(214, 165, 53, 0.6);
+    }
+    .search-icon-inline {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      pointer-events: none;
+      opacity: 0.75;
+    }
+
+    .double-page-spread {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--parchment-sheet);
+      border-radius: 12px;
+      border: 2px solid var(--border-warm);
+      box-shadow: 
+        inset 0 0 40px rgba(214, 165, 53, 0.12),
+        0 4px 20px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+    }
+
+    .double-page-spread::before {
+      content: "";
+      position: absolute;
+      top: 6px; left: 6px; right: 6px; bottom: 6px;
+      border: 1px solid rgba(214, 165, 53, 0.4);
+      pointer-events: none;
+      border-radius: 8px;
+      z-index: 1;
+    }
+
+    .double-page-spread::after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 50%;
+      width: 28px;
+      transform: translateX(-50%);
+      background: linear-gradient(
+        90deg, 
+        rgba(0, 0, 0, 0.09) 0%, 
+        rgba(30, 15, 10, 0.22) 45%, 
+        var(--theme-gold) 50%, 
+        rgba(30, 15, 10, 0.22) 55%, 
+        rgba(0, 0, 0, 0.09) 100%
+      );
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .page-leaf {
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-leaf-left {
+      border-right: 1.5px solid #EADBCC;
+      padding-right: 34px;
+    }
+
+    .page-leaf-right {
+      padding-left: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .steps-bottom-decor {
+      margin-top: auto;
+      padding-top: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      user-select: none;
+      opacity: 0.85;
+    }
+
+    .decor-divider-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 10px;
+      color: var(--theme-gold);
+    }
+
+    .decor-divider-line::before,
+    .decor-divider-line::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--theme-gold), transparent);
+    }
+
+    .decor-glyphs {
+      font-size: 1.05rem;
+      letter-spacing: 5px;
+      color: var(--theme-accent);
+    }
+
+    .decor-sub-motifs {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      color: var(--ink-muted);
+      opacity: 0.75;
+    }
+
+    .page-header-side {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid #EADBCC;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .recipe-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.55rem;
+      color: var(--theme-leather-1);
+      font-weight: 900;
+      line-height: 1.25;
+      text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+    }
+
+    .page-indicator {
+      font-family: 'Cinzel', serif;
+      color: var(--theme-accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .recipe-image-wrap {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background: #F8EFE3;
+      border-radius: 12px;
+      border: 2px solid var(--border-warm);
+      box-shadow: 
+        inset 0 0 12px rgba(0,0,0,0.08),
+        0 3px 8px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    .recipe-image-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+
+    .recipe-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border-warm);
+    }
+
+    .portions-control {
+      display: inline-flex;
+      align-items: center;
+      background: #FDF4E9;
+      padding: 2px 8px;
+      border-radius: 99px;
+      border: 1px solid var(--border-warm);
+      gap: 6px;
+    }
+
+    .btn-portion {
+      background: white;
+      border: 1px solid var(--border-warm);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+      color: var(--theme-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+    .btn-portion:hover {
+      background: var(--theme-accent);
+      color: white;
+    }
+
+    .macros-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      background: #FFF8EE;
+      border: 1.5px solid #EADBCC;
+      border-radius: 10px;
+      padding: 8px;
+      text-align: center;
+      margin-bottom: 10px;
+      box-shadow: inset 0 0 8px rgba(214, 165, 53, 0.06);
+    }
+
+    .macro-label {
+      font-size: 0.65rem;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .macro-value {
+      font-size: 0.95rem;
+      font-weight: 900;
+      color: var(--theme-accent);
+    }
+
+    .macro-sub { font-size: 0.65rem; color: #9A7D6E; }
+
+    .macro-disclaimer {
+      font-size: 0.76rem;
+      color: var(--ink-muted);
+      background: #FFF9F2;
+      border-left: 3.5px solid var(--theme-accent);
+      border-top: 1px solid #F1E5D5;
+      border-right: 1px solid #F1E5D5;
+      border-bottom: 1px solid #F1E5D5;
+      padding: 7px 10px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--theme-leather-1);
+      border-bottom: 1.5px solid #EADBCC;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    ul.ingredient-list { list-style: none; }
+    ul.ingredient-list li {
+      padding: 4px 0;
+      font-size: 0.88rem;
+      border-bottom: 1px dotted #EDE1D2;
+      display: flex;
+      gap: 6px;
+    }
+    ul.ingredient-list li::before {
+      content: var(--theme-bullet);
+      color: var(--theme-gold);
+      font-size: 0.8rem;
+    }
+
+    ol.steps-list { padding-left: 18px; }
+    ol.steps-list li {
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .book-side-tab {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 125px;
+      background: linear-gradient(180deg, var(--theme-leather-1) 0%, var(--theme-leather-2) 100%);
+      border: 2px solid var(--theme-gold);
+      color: var(--theme-gold-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      transition: all 0.22s ease;
+      user-select: none;
+    }
+
+    .book-side-tab span.arrow { font-size: 1.5rem; font-weight: 900; }
+    .book-side-tab span.tab-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+      color: var(--theme-gold);
+    }
+
+    .tab-left { left: -24px; border-radius: 12px 0 0 12px; border-right: none; }
+    .tab-left:hover:not(.disabled) { left: -32px; color: white; }
+
+    .tab-right { right: -24px; border-radius: 0 12px 12px 0; border-left: none; }
+    .tab-right:hover:not(.disabled) { right: -32px; color: white; }
+
+    .book-side-tab.disabled { opacity: 0.22; cursor: not-allowed; }
+
+    .footer-hint {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.76rem;
+      color: var(--theme-gold-soft);
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    .mobile-bottom-nav { display: none; }
+
+    @media (max-width: 820px) {
+      body { padding: 10px 8px 85px; }
+      h1 { font-size: 1.7rem; }
+      p.subtitle { font-size: 0.85rem; }
+      .badge-spell { font-size: 0.72rem; padding: 4px 12px; }
+
+      .closed-book-scene { max-width: 95%; margin: 10px auto; }
+      .closed-book-cover { min-height: 520px; padding: 20px 16px; }
+      .cover-main-title { font-size: 1.7rem; }
+
+      .book-wrapper { padding: 8px; border-radius: 18px; }
+      .book-inner-border { padding: 6px; border-radius: 14px; }
+      .book-corner { width: 24px; height: 24px; border-width: 3px 0 0 3px; }
+      .corner-top-right { border-width: 3px 3px 0 0; }
+      .corner-bottom-left { border-width: 0 0 3px 3px; }
+      .corner-bottom-right { border-width: 0 3px 3px 0; }
+
+      .double-page-spread { grid-template-columns: 1fr; min-height: auto; }
+      .double-page-spread::after { display: none; }
+      .page-leaf { padding: 14px 12px; }
+      .page-leaf-left { border-right: none; border-bottom: 1.5px dashed var(--border-warm); padding-right: 12px; }
+      .page-leaf-right { padding-left: 12px; padding-top: 18px; }
+      .recipe-image-wrap { height: 190px; margin-bottom: 10px; }
+      .macros-bar { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .recipe-title { font-size: 1.3rem; }
+
+      .book-side-tab { display: none !important; }
+
+      .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(30, 10, 8, 0.9);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid var(--theme-gold);
+        border-radius: 99px;
+        padding: 6px 14px;
+        gap: 16px;
+        z-index: 100;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+        align-items: center;
+      }
+
+      .mobile-btn-nav {
+        background: transparent;
+        border: none;
+        color: var(--theme-gold-soft);
+        font-family: 'Cinzel', serif;
+        font-size: 0.82rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        padding: 6px 10px;
+      }
+      .mobile-btn-nav:disabled { opacity: 0.25; }
+      .mobile-page-counter {
+        font-family: 'Cinzel', serif;
+        color: var(--theme-gold);
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <svg class="decor-sunflower sunflower-left" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="50" cy="50" r="14" stroke-width="2" stroke-dasharray="2 2" fill="currentColor" fill-opacity="0.12"/>
+    <path d="M50 36 C47 24 53 24 50 14 C47 24 53 24 50 36Z" fill="currentColor" fill-opacity="0.08"/>
+    <path d="M50 64 C47 76 53 76 50 86 C47 76 53 76 50 64Z" fill="currentColor" fill-opacity="0.08"/>
+    <path d="M36 50 C24 47 24 53 14 50 C24 47 24 53 36 50Z" fill="currentColor" fill-opacity="0.08"/>
+    <path d="M64 50 C76 47 76 53 86 50 C76 47 76 53 64 50Z" fill="currentColor" fill-opacity="0.08"/>
+  </svg>
+
+  <svg class="decor-sunflower sunflower-right" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="50" cy="50" r="14" stroke-width="2" stroke-dasharray="2 2" fill="currentColor" fill-opacity="0.12"/>
+    <path d="M50 36 C47 24 53 24 50 14 C47 24 53 24 50 36Z" fill="currentColor" fill-opacity="0.08"/>
+    <path d="M50 64 C47 76 53 76 50 86 C47 76 53 76 50 64Z" fill="currentColor" fill-opacity="0.08"/>
+    <path d="M36 50 C24 47 24 53 14 50 C24 47 24 53 36 50Z" fill="currentColor" fill-opacity="0.08"/>
+    <path d="M64 50 C76 47 76 53 86 50 C76 47 76 53 64 50Z" fill="currentColor" fill-opacity="0.08"/>
+  </svg>
+
+  <div class="spell-floating sf-1">✨</div>
+  <div class="spell-floating sf-2">📖</div>
+  <div class="spell-floating sf-3">🍂</div>
+  <div class="spell-floating sf-4">✨</div>
+
+  <header>
+    <div class="badge-spell" id="headerBadge">Grimoire Culinaire</div>
+    <div class="witch-cauldron-wrap">
+      <div class="cauldron-container">
+        <span class="cauldron-body" id="cauldronIcon">🍲</span>
+        <span class="cauldron-smoke">🫧</span>
+        <span class="cauldron-smoke smoke-2" id="smokeIcon">✨</span>
+      </div>
+      <h1 id="mainTitle">Le Grimoire de Fahem</h1>
+    </div>
+    <p class="subtitle" id="mainSubtitle">Les secrets culinaires soigneusement scellés dans le parchemin.</p>
+  </header>
+
+  <!-- ======================================================== -->
+  <!-- PREMIÈRE PAGE : LIVRE FERMÉ MÉDIÉVAL ÉLÉGANT            -->
+  <!-- ======================================================== -->
+  <section class="closed-book-scene" id="closedBookScene">
+    <div class="closed-book-cover" id="closedBookCover" onclick="ouvrirLeGrimoire()" title="Cliquez pour ouvrir le Grimoire">
+      
+      <div class="book-corner corner-top-left"></div>
+      <div class="book-corner corner-top-right"></div>
+      <div class="book-corner corner-bottom-left"></div>
+      <div class="book-corner corner-bottom-right"></div>
+      <div class="cover-inner-border"></div>
+
+      <div style="text-align:center; padding-top: 8px;">
+        <span style="color:var(--theme-gold); font-size: 1.3rem; letter-spacing: 6px;">✦ ◈ ❖ ◈ ✦</span>
+      </div>
+
+      <div class="cover-center-seal">
+        <h2 class="cover-main-title">Les Recettes<br>de Fahem</h2>
+        <div class="cover-strap-lock">
+          <span>◈</span>
+          <span style="font-size: 1.5rem; color: var(--theme-gold);">⚜️</span>
+          <span>◈</span>
+        </div>
+        <p class="cover-author-sub" style="margin-top: 8px;">Tome I • Secrets Gourmands</p>
+      </div>
+
+      <div style="text-align:center;">
+        <p class="cover-click-prompt">✦ Touchez pour desceller le Grimoire ✦</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- LIVRE OUVERT (DOUBLE PAGE)                               -->
+  <!-- ======================================================== -->
+  <div class="book-container-rel hide-opened" id="openedBookContainer">
+
+    <button class="btn-close-book" onclick="refermerLeGrimoire()" title="Revenir à la couverture fermée">📕 Refermer</button>
+
+    <div class="book-side-tab tab-left" id="tabPrev" onclick="changerPageLateral(-1)" title="Page précédente">
+      <span class="arrow">‹</span>
+      <span class="tab-text">Précédent</span>
+    </div>
+
+    <div class="book-wrapper" id="bookWrapper">
+      <div class="book-corner corner-top-left"></div>
+      <div class="book-corner corner-top-right"></div>
+      <div class="book-corner corner-bottom-left"></div>
+      <div class="book-corner corner-bottom-right"></div>
+
+      <div class="book-inner-border">
+        <div class="theme-banner" id="themeBanner">◆ ◈ ✦ ◈ ◆</div>
+
+        <div class="grimoire-search-bar">
+          <span class="search-icon-inline">🔍</span>
+          <input 
+            type="text" 
+            id="grimoireSearch" 
+            placeholder="Rechercher dans le livre (plat, ingrédient...)" 
+            oninput="filtrerGrimoire()"
+          />
+        </div>
+
+        <main class="double-page-spread" id="recipeSpread"></main>
+
+        <p class="footer-hint">Tournez les pages au swipe tactile, onglets latéraux ou flèches ← / →.</p>
+      </div>
+    </div>
+
+    <div class="book-side-tab tab-right" id="tabNext" onclick="changerPageLateral(1)" title="Page suivante">
+      <span class="arrow">›</span>
+      <span class="tab-text">Suivant</span>
+    </div>
+
+  </div>
+
+  <div class="mobile-bottom-nav" id="mobileNav">
+    <button class="mobile-btn-nav" id="mBtnPrev" onclick="changerPageLateral(-1)">‹ Préc.</button>
+    <span class="mobile-page-counter" id="mPageCount">1 / 13</span>
+    <button class="mobile-btn-nav" id="mBtnNext" onclick="changerPageLateral(1)">Suiv. ›</button>
+  </div>
+
+  <footer style="text-align: center; font-size: 0.72rem; color: #8C7365; margin-top: 35px; opacity: 0.75; user-select: none;">
+    Le Grimoire de Fahem • Carnet de recettes culinaires personnel • Fait avec passion
+  </footer>
+
+  <script>
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    let audioCtx = null;
+
+    function initAudio() {
+      if (!audioCtx) audioCtx = new AudioContext();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+    }
+
+    function playSoftPageTurnSound() {
+      try {
+        initAudio();
+        const duration = 0.24;
+        const bufferSize = Math.floor(audioCtx.sampleRate * duration);
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+
+        let lastVal = 0;
+        for (let i = 0; i < bufferSize; i++) {
+          const white = Math.random() * 2 - 1;
+          lastVal = (lastVal + (0.04 * white)) / 1.04;
+          data[i] = lastVal * 2.5;
+        }
+
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(650, audioCtx.currentTime);
+        filter.frequency.exponentialRampToValueAtTime(250, audioCtx.currentTime + duration);
+
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.005, audioCtx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.12, audioCtx.currentTime + 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.0005, audioCtx.currentTime + duration);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        noise.start();
+      } catch (e) {}
+    }
+
+    // Son style Undertale pour Toriel uniquement
+    function playUndertaleSound() {
+      try {
+        initAudio();
+        const notes = [440, 554.37, 659.25, 880];
+        notes.forEach((freq, index) => {
+          const osc = audioCtx.createOscillator();
+          const gainNode = audioCtx.createGain();
+          
+          osc.type = 'square';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime + index * 0.08);
+          
+          gainNode.gain.setValueAtTime(0.08, audioCtx.currentTime + index * 0.08);
+          gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + index * 0.08 + 0.12);
+          
+          osc.connect(gainNode);
+          gainNode.connect(audioCtx.destination);
+          
+          osc.start(audioCtx.currentTime + index * 0.08);
+          osc.stop(audioCtx.currentTime + index * 0.08 + 0.15);
+        });
+      } catch (e) {}
+    }
+
+    function ouvrirLeGrimoire() {
+      playSoftPageTurnSound();
+      const closedCover = document.getElementById('closedBookCover');
+      const closedScene = document.getElementById('closedBookScene');
+      const openedContainer = document.getElementById('openedBookContainer');
+      const mobileNav = document.getElementById('mobileNav');
+
+      closedCover.classList.add('cover-opening-anim');
+
+      setTimeout(() => {
+        closedScene.classList.add('hide-scene');
+        openedContainer.classList.remove('hide-opened');
+        if (window.innerWidth <= 820) {
+          mobileNav.style.display = 'flex';
+        }
+        afficherDoublePage();
+      }, 550);
+    }
+
+    function refermerLeGrimoire() {
+      playSoftPageTurnSound();
+      const closedCover = document.getElementById('closedBookCover');
+      const closedScene = document.getElementById('closedBookScene');
+      const openedContainer = document.getElementById('openedBookContainer');
+      const mobileNav = document.getElementById('mobileNav');
+
+      openedContainer.classList.add('hide-opened');
+      closedScene.classList.remove('hide-scene');
+      closedCover.classList.remove('cover-opening-anim');
+      mobileNav.style.display = 'none';
+
+      document.body.className = '';
+      document.getElementById('headerBadge').innerText = "Grimoire Culinaire";
+      document.getElementById('mainSubtitle').innerText = "Les secrets culinaires soigneusement scellés dans le parchemin.";
+    }
+
+    const toutesLesRecettes = [
+      {
+        id: 1,
+        themeClass: "theme-trida",
+        badgeText: "Trida au Poulet",
+        bannerDecor: "❖ ◈ ✦ RECETTE TRADITIONNELLE DE TRIDA ✦ ◈ ❖",
+        titre: "Trida au Poulet & Pois Chiches",
+        image: "trida.jpeg",
+        tempsPrepa: "30 min",
+        tempsCuisson: "1h",
+        portionsBase: 3,
+        portionsActuelles: 3,
+        macrosParPortion: {
+          calories: 1520,
+          cal100g: 195,
+          proteines: 90,
+          glucides: 145,
+          lipides: 62
+        },
+        disclaimer: "⚠️ <em>Assiette complète très généreuse : 1 cuisse entière de poulet dorée, 1/3 de paquet de 500g de trida (~167g de pâtes crues), 1 œuf dur, pois chiches et carottes.</em>",
+        motifsDecor: {
+          glyphes: "✦ ◈ ❖ ◈ ✦",
+          sub: "• ─── 🌾 ─── •"
+        },
+        ingredients: [
+          { qte: 3, unite: "", nom: "cuisses de poulet entières" },
+          { qte: 500, unite: "g", nom: "pâtes à trida (paquet complet pour 3)" },
+          { qte: 1, unite: "gros", nom: "oignon" },
+          { qte: 3, unite: "", nom: "gousses d'ail" },
+          { qte: 2, unite: "", nom: "tomates fraîches (épluchées et mixées)" },
+          { qte: 2, unite: "c. à soupe", nom: "concentré de tomate" },
+          { qte: 1, unite: "c. à soupe", nom: "ras el hanout" },
+          { qte: 1, unite: "c. à café", nom: "curcuma" },
+          { qte: 1, unite: "c. à soupe", nom: "gingembre" },
+          { qte: 1, unite: "pincée", nom: "sel et poivre noir" },
+          { qte: 2, unite: "grosses", nom: "carottes (coupées en tronçons)" },
+          { qte: 200, unite: "g", nom: "pois chiches cuits" },
+          { qte: 3, unite: "", nom: "œufs durs" },
+          { qte: 2, unite: "c. à soupe", nom: "huile d'olive" },
+          { qte: 25, unite: "g", nom: "beurre (cuisson + dorure)" }
+        ],
+        etapes: [
+          "Mixer l'oignon et les gousses d'ail pour obtenir une pâte fine.",
+          "Dans une marmite (ou couscoussier), faire dorer les cuisses de poulet dans l'huile d'olive avec une noix de beurre.",
+          "Ajouter la mixture oignon/ail, les 2 tomates fraîches mixées et le concentré de tomate.",
+          "Assaisonner avec le ras el hanout, le curcuma, le gingembre, le sel et le poivre. Bien faire revenir pour imprégner la volaille.",
+          "Mouiller généreusement d'eau chaude à hauteur. Ajouter les carottes et pois chiches. Couvrir et laisser mijoter à feu moyen.",
+          "Préparer la trida : dans un grand plat, enduire les 500g de pâtes carrées avec un filet d'huile et une pincée de sel en frottant délicatement entre les mains.",
+          "Trois cuissons vapeur de 15 minutes au couscoussier : aérer d'eau salée à la 2e vapeur, et d'une louche de sauce parfumée à la 3e.",
+          "Retirer les cuisses cuites, les enduire d'un peu de beurre et les enfourner à 200°C pour obtenir une peau bien dorée et croustillante.",
+          "Faire cuire les œufs durs à part et les écaler.",
+          "Dresser les pâtes trida bien imbibées avec le poulet doré, les carottes, les pois chiches et les demi-œufs durs."
+        ]
+      },
+      {
+        id: 2,
+        themeClass: "theme-tajine",
+        badgeText: "Tajine Poulet Frites",
+        bannerDecor: "🫒 ◈ ✦ TAJINE POULET, OLIVES & FRITES ✦ ◈ 🫒",
+        titre: "Tajine Poulet, Olives & Frites",
+        image: "image_607abf.jpg",
+        tempsPrepa: "25 min",
+        tempsCuisson: "1h",
+        portionsBase: 5,
+        portionsActuelles: 5,
+        macrosParPortion: {
+          calories: 670,
+          cal100g: 165,
+          proteines: 34,
+          glucides: 32,
+          lipides: 44
+        },
+        disclaimer: "⚠️ <em>Prend en compte 2 pilons dorés au four, la sauce aux olives réduite et les frites maison frites à l'huile (~670 kcal l'assiette complète).</em>",
+        motifsDecor: {
+          glyphes: "◈ 🫒 ◈ 🫒 ◈",
+          sub: "• ─── 🌿 ─── •"
+        },
+        ingredients: [
+          { qte: 10, unite: "", nom: "pilons de poulet (2 par personne)" },
+          { qte: 200, unite: "g", nom: "olives vertes dénoyautées" },
+          { qte: 1, unite: "gros", nom: "oignon (pour la marinade)" },
+          { qte: 3, unite: "", nom: "gousses d'ail" },
+          { qte: 50, unite: "g", nom: "persil frais" },
+          { qte: 50, unite: "g", nom: "coriandre fraîche" },
+          { qte: 1, unite: "c. à soupe", nom: "cumin" },
+          { qte: 1, unite: "c. à soupe", nom: "gingembre" },
+          { qte: 1, unite: "c. à soupe", nom: "ras el hanout" },
+          { qte: 1, unite: "c. à café", nom: "curcuma (ou plus selon goût)" },
+          { qte: 1, unite: "pincée", nom: "sel et poivre" },
+          { qte: 2, unite: "c. à soupe", nom: "huile d'olive" },
+          { qte: 1, unite: "filet", nom: "jus de citron" },
+          { qte: 1, unite: "", nom: "oignon rouge (pour la marmite)" },
+          { qte: 1, unite: "", nom: "échalote" },
+          { qte: 2, unite: "c. à soupe", nom: "huile de tournesol" },
+          { qte: 15, unite: "g", nom: "beurre (pour dorer le poulet)" },
+          { qte: 3, unite: "grosses", nom: "pommes de terre (pour les frites)" }
+        ],
+        etapes: [
+          "Préparer la marinade (chermoula) : mixer l'oignon, les gousses d'ail, le persil et la coriandre fraîche.",
+          "Verser cette marinade sur les pilons. Ajouter toutes les épices (cumin, ras el hanout, curcuma, gingembre, sel, poivre), l'huile d'olive et le jus de citron. Ajouter un peu d'eau pour immerger le poulet. Réserver au frais.",
+          "Dans le tajine (ou une sauteuse), faire suer l'oignon rouge et l'échalote émincés dans l'huile de tournesol.",
+          "Ajouter le poulet avec sa marinade. Recouvrir d'eau, fermer le tajine et cuire 45 minutes à feu moyen.",
+          "Dessaler les olives vertes 10 minutes dans une casserole d'eau bouillante, puis égoutter.",
+          "Au bout des 45 minutes, retirer les pilons, les déposer sur une plaque avec une noisette de beurre et enfourner à 200°C pour bien dorer la peau.",
+          "Insérer les olives dans le tajine. Laisser réduire la sauce à découvert pour obtenir une liaison onctueuse et gourmande.",
+          "Tailler grossièrement les pommes de terre et frire des frites maison bien croustillantes.",
+          "Remettre les pilons dorés dans le tajine, disposer les frites par-dessus et servir aussitôt dans le plat."
+        ]
+      },
+      {
+        id: 3,
+        themeClass: "theme-japanese",
+        badgeText: "Curry Japonais",
+        bannerDecor: "🌸 ◆ ᚛ CURRY JAPONAIS AUTHENTIQUE ᚜ ◆ 🌸",
+        titre: "Curry Japonais (Roux Secret)",
+        image: "image_bcf07b.jpg",
+        tempsPrepa: "20 min",
+        tempsCuisson: "1h",
+        portionsBase: 4,
+        portionsActuelles: 4,
+        macrosParPortion: {
+          calories: 363,
+          cal100g: 90,
+          proteines: 32,
+          glucides: 31,
+          lipides: 13
+        },
+        disclaimer: "⚠️ <em>Calculé pour la sauce et le poulet (penser à ajouter votre pesée de riz basmati façon bol de combat !).</em>",
+        motifsDecor: {
+          glyphes: "🌸 ◆ ✦ ◈ ✦ ◆ 🌸",
+          sub: "• ─── 🍡 ─── •"
+        },
+        ingredients: [
+          { qte: 500, unite: "g", nom: "escalopes de poulet" },
+          { qte: 1, unite: "c. à soupe", nom: "oignon en poudre" },
+          { qte: 1, unite: "c. à café", nom: "ail en poudre" },
+          { qte: 1, unite: "pincée", nom: "gingembre râpé" },
+          { qte: 2, unite: "", nom: "gousses d'ail pressées" },
+          { qte: 2, unite: "c. à soupe", nom: "sauce soja" },
+          { qte: 2, unite: "", nom: "oignons rouges" },
+          { qte: 1, unite: "c. à soupe", nom: "concentré de tomate" },
+          { qte: 1, unite: "L", nom: "bouillon de légumes" },
+          { qte: 1, unite: "", nom: "grosse carotte" },
+          { qte: 1, unite: "", nom: "grosse pomme de terre" },
+          { qte: 0.25, unite: "", nom: "pomme rouge bio (râpée)" },
+          { qte: 1, unite: "filet", nom: "miel" },
+          { qte: 50, unite: "g", nom: "farine" },
+          { qte: 50, unite: "g", nom: "beurre (fondu)" },
+          { qte: 2, unite: "c. à soupe", nom: "garam masala" },
+          { qte: 1, unite: "c. à soupe", nom: "curcuma" },
+          { qte: 1, unite: "c. à café", nom: "piment d'Espelette" },
+          { qte: 1, unite: "c. à café", nom: "coriandre moulue" },
+          { qte: 1, unite: "carreau", nom: "chocolat noir" },
+          { qte: 1, unite: "portion", nom: "riz basmati (pour servir)" }
+        ],
+        etapes: [
+          "Préparer la marinade : mélanger les escalopes avec l'oignon en poudre, l'ail en poudre, le gingembre, l'ail pressé et la sauce soja.",
+          "Dans une marmite, laisser caraméliser les oignons rouges. Ajouter le concentré de tomate, puis verser le litre de bouillon de légumes.",
+          "Couper la carotte et la pomme de terre en gros morceaux. Râper le quart de pomme rouge bio. Ajouter le tout dans la marmite avec un filet de miel.",
+          "Préparer le roux doré : faire fondre le beurre, ajouter la farine en remuant jusqu'à former une belle pâte compacte, puis incorporer les épices (garam masala, curcuma, piment, coriandre). Remuer jusqu'à parfaite infusion.",
+          "Délayer ce roux avec une louche de bouillon chaud puis l'incorporer dans la marmite en fouettant.",
+          "Saisir le poulet mariné à feu fort dans une poêle pour caraméliser les sucs. Déglacer à l'eau et transvaser dans la marmite.",
+          "Laisser mijoter à feu doux pour cuire la viande et laisser épaissir la sauce en profondeur.",
+          "Ajouter le carreau de chocolat noir pour le secret final. Napper chaud sur du riz basmati."
+        ]
+      },
+      {
+        id: 4,
+        themeClass: "theme-cookies",
+        badgeText: "Cookies ✨",
+        bannerDecor: "🎸 ◈ 🍂 LES COOKIES PUR CHOCOLAT 🍂 ◈ 🎸",
+        titre: "Cookies Moelleux Deux Chocolats",
+        image: "cookies.png",
+        tempsPrepa: "15 min",
+        tempsCuisson: "12 min",
+        portionsBase: 8,
+        portionsActuelles: 8,
+        macrosParPortion: {
+          calories: 399,
+          cal100g: 465,
+          proteines: 5.2,
+          glucides: 52,
+          lipides: 19
+        },
+        disclaimer: "⚠️ <em>Calculé pour 1 gros cookie généreux (fournée de 8 pièces) garni de gros morceaux fondants de chocolat au lait et chocolat blanc.</em>",
+        motifsDecor: {
+          glyphes: "🎸 🍂 ◈ 🍂 🎸",
+          sub: "• ─── 🖤 ─── •"
+        },
+        ingredients: [
+          { qte: 200, unite: "g", nom: "farine de blé (tamisée)" },
+          { qte: 100, unite: "g", nom: "cassonade (tamisée)" },
+          { qte: 50, unite: "g", nom: "sucre blanc" },
+          { qte: 100, unite: "g", nom: "beurre mou (pommade ou micro-ondes)" },
+          { qte: 1, unite: "", nom: "œuf entier" },
+          { qte: 1, unite: "sachet", nom: "sucre vanillé" },
+          { qte: 0.5, unite: "sachet", nom: "levure chimique" },
+          { qte: 100, unite: "g", nom: "tablette de chocolat au lait (coupée en gros morceaux)" },
+          { qte: 100, unite: "g", nom: "tablette de chocolat blanc (coupée en gros morceaux)" }
+        ],
+        etapes: [
+          "Dans un grand récipient, tamiser la farine. Ajouter la cassonade (tamisée également) et le sucre blanc.",
+          "Ajouter le beurre bien mou (travaillé en pommade ou passé quelques secondes au micro-ondes sans le rendre liquide).",
+          "Ajouter l'œuf entier et mélanger le tout à la main ou à la spatule pour commencer à amalgamer la pâte.",
+          "Incorporer le sachet de sucre vanillé et le demi-sachet de levure chimique, puis bien pétrir jusqu'à obtenir une pâte homogène et souple.",
+          "Hacher les deux tablettes de chocolat (lait et blanc) en gros morceaux réguliers à l'aide d'un couteau, puis les incorporer délicatement dans la pâte.",
+          "À l'aide d'une cuillère à soupe, former des boules de pâte régulières et les disposer bien espacées sur une plaque recouverte de papier sulfurisé.",
+          "Enfourner à 180°C - 200°C pendant exactement 12 minutes (les bords doivent être légèrement dorés et le centre encore tout tendre).",
+          "Sortir du four et laisser impérativement tiédir 20 minutes sur la plaque : ils vont figer en gardant un cœur ultra moelleux et des pépites fondantes."
+        ]
+      },
+      {
+        id: 5,
+        themeClass: "theme-omelette",
+        badgeText: "Frite-Omelette",
+        bannerDecor: "🍳 ◈ ✦ FRITES & OMELETTE FONDANTE ✦ ◈ 🍳",
+        titre: "Frite-Omelette",
+        image: "frite-omelette.png",
+        tempsPrepa: "15 min",
+        tempsCuisson: "15 min",
+        portionsBase: 2,
+        portionsActuelles: 2,
+        macrosParPortion: {
+          calories: 445,
+          cal100g: 175,
+          proteines: 21.5,
+          glucides: 32,
+          lipides: 25
+        },
+        disclaimer: "⚠️ <em>Valeurs estimées pour 1 part généreuse (sur une base de 2 personnes avec 6 œufs et 2 grosses pommes de terre).</em>",
+        motifsDecor: {
+          glyphes: "🍳 ◈ ✦ ◈ 🍳",
+          sub: "• ─── 🥔 ─── •"
+        },
+        ingredients: [
+          { qte: 2, unite: "grosses", nom: "pommes de terre" },
+          { qte: 6, unite: "", nom: "œufs entiers" },
+          { qte: 1, unite: "", nom: "oignon rouge" },
+          { qte: 1, unite: "botte", nom: "persil frais" },
+          { qte: 2, unite: "c. à soupe", nom: "huile (pour la cuisson)" },
+          { qte: 1, unite: "pincée", nom: "sel et poivre noir" }
+        ],
+        etapes: [
+          "Trancher les deux grosses pommes de terre en frites, puis bien les rincer à l'eau claire et les égoutter.",
+          "Couper l'oignon rouge en petits dés et ciseler finement le persil frais.",
+          "Faire cuire les frites (en bain d'huile ou à la poêle avec un filet d'huile) jusqu'à ce qu'elles soient bien dorées et fondantes, puis les saler une fois cuites.",
+          "Dans un grand saladier, casser les 6 œufs, ajouter le persil ciselé, du sel et du poivre, puis fouetter vigoureusement le tout.",
+          "Dans une poêle, faire suer et revenir les dés d'oignon rouge avec un filet d'huile.",
+          "Ajouter les frites cuites dans la poêle avec les oignons.",
+          "Verser par-dessus la préparation à base d'œufs battus en veillant à bien napper toutes les frites.",
+          "Laisser cuire à feu doux pendant quelques minutes (couvrir avec un couvercle si besoin pour bien figer l'omelette), puis servir bien chaud !"
+        ]
+      },
+      {
+        id: 6,
+        themeClass: "theme-parmentier",
+        badgeText: "Hachis Parmentier",
+        bannerDecor: "🏛️ ◈ ✦ HACHIS PARMENTIER TRADITIONNEL ✦ ◈ 🏛️",
+        titre: "Hachis Parmentier",
+        image: "hachis-parmentier.png",
+        tempsPrepa: "25 min",
+        tempsCuisson: "40 min",
+        portionsBase: 4,
+        portionsActuelles: 4,
+        macrosParPortion: {
+          calories: 580,
+          cal100g: 145,
+          proteines: 35,
+          glucides: 42,
+          lipides: 28
+        },
+        disclaimer: "⚠️ <em>Valeurs estimées pour une portion généreuse de hachis parmentier gratiné à la mozzarella.</em>",
+        motifsDecor: {
+          glyphes: "🏛️ ◈ ✦ ◈ 🏛️",
+          sub: "• ─── 🌿 ─── •"
+        },
+        ingredients: [
+          { qte: 5, unite: "grosses", nom: "pommes de terre" },
+          { qte: 500, unite: "g", nom: "viande hachée" },
+          { qte: 1, unite: "grosse", nom: "carotte" },
+          { qte: 1, unite: "", nom: "oignon jaune" },
+          { qte: 1, unite: "", nom: "oignon rouge" },
+          { qte: 10, unite: "cl", nom: "crème fraîche" },
+          { qte: 1, unite: "", nom: "bouillon de bœuf" },
+          { qte: 1, unite: "botte", nom: "persil et ciboulette ciselés" },
+          { qte: 1, unite: "filet", nom: "sauce soja (facultatif)" },
+          { qte: 150, unite: "g", nom: "mozzarella râpée" },
+          { qte: 2, unite: "c. à soupe", nom: "huile" }
+        ],
+        etapes: [
+          "Éplucher les pommes de terre et les couper en deux pour accélérer la cuisson. Les plonger dans l'eau bouillante pendant environ 30 minutes jusqu'à ce qu'elles soient bien fondantes (le couteau doit y entrer facilement).",
+          "Éplucher et couper très finement la carotte, l'oignon jaune et l'oignon rouge en petits dés.",
+          "Dans une poêle avec un peu d'huile, faire suer le mélange d'oignons et de carottes. Ajouter un filet de sauce soja si souhaité.",
+          "Ajouter les 500 g de viande hachée dans la poêle et laisser dorer.",
+          "Délayer le bouillon de bœuf dans un peu d'eau et l'incorporer à la viande pour terminer sa cuisson et l'attendrir, puis ajouter le persil et la ciboulette ciselés.",
+          "Écraser les pommes de terre cuites en purée, puis y incorporer la crème fraîche (environ 10 cl) et rectifier l'assaisonnement.",
+          "Dans un plat à gratin, tapisser le fond avec la préparation de viande hachée, puis parsemer un peu de mozzarella râpée.",
+          "Recouvrir généreusement avec la purée de pommes de terre en lissant bien le tout.",
+          "Ajouter le reste de mozzarella râpée sur le dessus et enfourner à 200°C pendant environ 10 minutes pour bien faire gratiner."
+        ]
+      },
+      {
+        id: 7,
+        themeClass: "theme-fasagne",
+        badgeText: "Recette Inédite • Fasagne",
+        bannerDecor: "🧀 ◈ ✦ FASAGNE POIVRONS & VIANDE HACHÉE ✦ ◈ 🧀",
+        titre: "Fasagne (Lasagne au Poivron)",
+        image: "fasagne.png",
+        tempsPrepa: "25 min",
+        tempsCuisson: "10 min",
+        portionsBase: 4,
+        portionsActuelles: 4,
+        macrosParPortion: {
+          calories: 520,
+          cal100g: 160,
+          proteines: 36,
+          glucides: 44,
+          lipides: 21
+        },
+        disclaimer: "⚠️ <em>Création originale ! Une portion de fasagne généreuse gratinée au comté et à la mozzarella, sans sauce tomate.</em>",
+        motifsDecor: {
+          glyphes: "🧀 ◈ ✦ ◈ 🧀",
+          sub: "• ─── 🌶️ ─── •"
+        },
+        ingredients: [
+          { qte: 3, unite: "gros", nom: "poivrons" },
+          { qte: 2, unite: "", nom: "oignons rouges" },
+          { qte: 3, unite: "", nom: "gousses d'ail" },
+          { qte: 500, unite: "g", nom: "viande hachée" },
+          { qte: 1, unite: "filet", nom: "sauce soja" },
+          { qte: 2, unite: "filets", nom: "miel" },
+          { qte: 1, unite: "c. à café", nom: "paprika fumé, cumin et curry" },
+          { qte: 1, unite: "pincée", nom: "sel et poivre noir" },
+          { qte: 1, unite: "botte", nom: "persil frais haché" },
+          { qte: 1, unite: "paquet", nom: "plaques de lasagne" },
+          { qte: 3, unite: "cl", nom: "lait (pour le fond du plat)" },
+          { qte: 100, unite: "g", nom: "mozzarella râpée" },
+          { qte: 100, unite: "g", nom: "comté râpé" }
+        ],
+        etapes: [
+          "Couper grossièrement les 3 gros poivrons, les 2 oignons rouges et les 3 gousses d'ail.",
+          "Passer ce mélange au mixeur pour obtenir une base aromatique bien fine.",
+          "Dans un saladier, mélanger la viande hachée (500g) avec la mixture mixée, un trait de sauce soja, deux filets de miel, le sel, le poivre, le paprika fumé, le cumin, le curry et le persil frais haché. Laisser reposer au frais.",
+          "Verser un petit peu de lait au fond du plat à gratin.",
+          "Disposer une première couche de feuilles de lasagne.",
+          "Ajouter une couche de la préparation à la viande hachée marinée, puis parsemer de mozzarella et de comté râpés.",
+          "Répéter l'opération en tassant bien à chaque couche jusqu'à remplir le plat à hauteur.",
+          "Enfourner à 200°C pendant environ 10 minutes pour bien cuire les pâtes si besoin et faire fondre/gratiner le fromage sur le dessus. Servir chaud !"
+        ]
+      },
+      {
+        id: 8,
+        themeClass: "theme-couscous",
+        badgeText: "Couscous au Veau",
+        bannerDecor: "🥕 ◈ ✦ COUSCOUS TRADITIONNEL AU VEAU ✦ ◈ 🥕",
+        titre: "Couscous",
+        image: "couscous.png",
+        tempsPrepa: "35 min",
+        tempsCuisson: "1h30",
+        portionsBase: 4,
+        portionsActuelles: 4,
+        macrosParPortion: {
+          calories: 780,
+          cal100g: 170,
+          proteines: 48,
+          glucides: 85,
+          lipides: 26
+        },
+        disclaimer: "⚠️ <em>Valeurs estimées pour une assiette généreuse de couscous à l'épaule de veau, carottes, pois chiches et semoule vapeur.</em>",
+        motifsDecor: {
+          glyphes: "🥕 ◈ ✦ ◈ 🥕",
+          sub: "• ─── 🌾 ─── •"
+        },
+        ingredients: [
+          { qte: 1, unite: "kg", nom: "épaule de veau (avec os)" },
+          { qte: 2, unite: "gros", nom: "oignons jaunes" },
+          { qte: 1, unite: "botte", nom: "persil et coriandre frais" },
+          { qte: 1, unite: "c. à soupe", nom: "paprika" },
+          { qte: 1, unite: "c. à soupe", nom: "ras el hanout" },
+          { qte: 1, unite: "c. à soupe", nom: "curcuma" },
+          { qte: 1, unite: "c. à café", nom: "piment d'Espelette" },
+          { qte: 2, unite: "c. à soupe", nom: "concentré de tomate" },
+          { qte: 0.5, unite: "brique", nom: "purée de tomate (ou concassé)" },
+          { qte: 1, unite: "L", nom: "eau bouillante" },
+          { qte: 4, unite: "grosses", nom: "carottes (coupées en gros morceaux)" },
+          { qte: 200, unite: "g", nom: "pois chiches (trempés la veille)" },
+          { qte: 3, unite: "", nom: "pommes de terre" },
+          { qte: 500, unite: "g", nom: "semoule de couscous" },
+          { qte: 3, unite: "c. à soupe", nom: "huile d'olive" },
+          { qte: 1, unite: "pincée", nom: "sel et poivre" }
+        ],
+        etapes: [
+          "Mixer les oignons jaunes avec le persil et la coriandre fraîche.",
+          "Dans une marmite (ou le bas du couscoussier), faire dorer les morceaux d'épaule de veau dans l'huile d'olive pendant quelques minutes de chaque côté.",
+          "Ajouter les épices (paprika, ras el hanout, curcuma, piment d'Espelette) et laisser torréfier légèrement.",
+          "Incorporer la mixture oignons/herbes, le concentré de tomate et la purée de tomate.",
+          "Verser 1 litre d'eau bouillante, puis ajouter les gros morceaux de carottes et les pois chiches trempés la veille.",
+          "Laisser mijoter à feu moyen pendant environ 1 heure.",
+          "Pendant ce temps, préparer la semoule (500g) : l'arroser un peu d'eau pour la laisser gonfler, puis ajouter un filet d'huile et du sel.",
+          "Au bout d'une heure de cuisson de la sauce, ajouter les pommes de terre dans la marmite.",
+          "Installer le haut du couscoussier avec la semoule au-dessus de la sauce (cuisson vapeur façon bain-marie) pour 3 cycles de 15 minutes.",
+          "Entre chaque cuisson vapeur, retirer la semoule, l'arroser d'un peu d'eau salée, et l'égrener soigneusement en la frottant entre ses mains.",
+          "Dresser le couscous dans les assiettes en disposant la semoule, la sauce parfumée, les légumes et les morceaux de veau fondants par-dessus."
+        ]
+      },
+      {
+        id: 9,
+        themeClass: "theme-soupe",
+        badgeText: "🥣 Soupe Réconfortante • Oignons & Cannelle 🥣",
+        bannerDecor: "🥣 ◈ ✦ SOUPE À L'OIGNON BLANCHE & CROÛTONS ✦ ◈ 🥣",
+        titre: "Soupe à l'Oignon",
+        image: "soupeoignon.png",
+        tempsPrepa: "15 min",
+        tempsCuisson: "25 min",
+        portionsBase: 3,
+        portionsActuelles: 3,
+        macrosParPortion: {
+          calories: 280,
+          cal100g: 65,
+          proteines: 7,
+          glucides: 34,
+          lipides: 12
+        },
+        disclaimer: "⚠️ <em>Valeurs estimées pour une portion de soupe à l'oignon avec ses croûtons poêlés et son gratiné de fromage (étape facultative pour les riches).</em>",
+        motifsDecor: {
+          glyphes: "🥣 ◈ ✦ ◈ 🥣",
+          sub: "• ─── 🧅 ─── •"
+        },
+        ingredients: [
+          { qte: 20, unite: "g", nom: "beurre" },
+          { qte: 1, unite: "filet", nom: "huile de tournesol" },
+          { qte: 1, unite: "c. à café", nom: "paprika" },
+          { qte: 2, unite: "", nom: "gousses d'ail" },
+          { qte: 3, unite: "", nom: "oignons rouges" },
+          { qte: 1, unite: "c. à café", nom: "cumin" },
+          { qte: 1, unite: "pincée", nom: "cannelle" },
+          { qte: 1, unite: "pincée", nom: "sel" },
+          { qte: 1, unite: "filet", nom: "sauce soja" },
+          { qte: 1, unite: "c. à soupe", nom: "farine" },
+          { qte: 800, unite: "ml", nom: "bouillon de légumes" },
+          { qte: 1, unite: "tranche", nom: "pain pour croûtons" },
+          { qte: 40, unite: "g", nom: "fromage râpé (facultatif - pour les riches)" }
+        ],
+        etapes: [
+          "Faire fondre 20 g de beurre avec un bon petit filet d'huile de tournesol dans une casserole.",
+          "Ajouter la cuillère à café de paprika et laisser torréfier légèrement.",
+          "Ajouter les 2 gousses d'ail et laisser revenir environ une minute avec les épices.",
+          "Émincer les oignons rouges, les ajouter dans la casserole avec la cuillère à café de cumin, un petit soupçon de cannelle et une pincée de sel.",
+          "Laisser compoter à feu moyen jusqu'à ce que les oignons commencent à bien cuire et à caraméliser au fond.",
+          "Verser un filet de sauce soja pour déglacer les sucs caramélisés, puis saupoudrer la cuillère à soupe de farine en mélangeant bien.",
+          "Ajouter les 800 ml de bouillon de légumes et porter à bonne ébullition pendant environ 15 à 20 minutes.",
+          "À part, faire griller à la poêle quelques croûtons de pain avec très peu de matières grasses.",
+          "Dresser en plaçant les croûtons au fond d'un bol, verser de bonnes louches de soupe à l'oignon par-dessus.",
+          "Étape facultative (pour les riches) : ajouter un petit peu de fromage sur le dessus et faire gratiner (au four ou au chalumeau)."
+        ]
+      },
+      {
+        id: 10,
+        themeClass: "theme-toriel",
+        badgeText: "♥ Undertale • Tarte Cannelle-Caramel de Toriel ♥",
+        bannerDecor: "♥ ◈ ✦ PÂTE BRISÉE & CRÈME CANNELLE ✦ ◈ ♥",
+        titre: "Toriel",
+        image: "Toriel.png",
+        tempsPrepa: "35 min",
+        tempsCuisson: "20 min",
+        portionsBase: 6,
+        portionsActuelles: 6,
+        macrosParPortion: {
+          calories: 410,
+          cal100g: 220,
+          proteines: 6,
+          glucides: 58,
+          lipides: 17
+        },
+        disclaimer: "⚠️ <em>Servi avec énormément d'amour, un peu de détermination et une bonne cuillère de 'gentilly'.</em>",
+        motifsDecor: {
+          glyphes: "♥ ◈ ✦ ◈ ♥",
+          sub: "• ─── 🥧 ─── •"
+        },
+        ingredients: [
+          { qte: 250, unite: "g", nom: "farine" },
+          { qte: 100, unite: "g", nom: "beurre pommade" },
+          { qte: 2, unite: "", nom: "jaunes d'œuf (pour la pâte)" },
+          { qte: 40, unite: "ml", nom: "eau" },
+          { qte: 2, unite: "pincées", nom: "sel" },
+          { qte: 250, unite: "g", nom: "cassonade" },
+          { qte: 3, unite: "", nom: "œufs entiers (pour la crème)" },
+          { qte: 1, unite: "c. à soupe", nom: "cannelle" },
+          { qte: 1, unite: "pincée", nom: "sel (pour la crème)" },
+          { qte: 40, unite: "g", nom: "beurre demi-sel" },
+          { qte: 1, unite: "filet", nom: "lait (selon consistance)" },
+          { qte: 25, unite: "cl", nom: "crème fraîche 30%" },
+          { qte: 1, unite: "sachet", nom: "sucre vanillé" }
+        ],
+        etapes: [
+          "Préparer la pâte brisée : mélanger 250g de farine, 100g de beurre pommade, 2 jaunes d'œuf, 40 ml d'eau et 2 pincées de sel. Bien pétrir, former une boule et laisser reposer 20 minutes sous un torchon.",
+          "Beurrer ou huiler un moule à tarte, étaler la pâte et piquer le fond avec une fourchette pour éviter qu'elle ne gonfle.",
+          "Enfourner la pâte seule à 180°C pendant environ 15 à 20 minutes jusqu'à ce qu'elle soit bien dorée.",
+          "Préparer la crème : dans un saladier, incorporer 250g de cassonade à 3 œufs entiers, une grosse cuillère à soupe de cannelle et une pincée de sel.",
+          "Verser le mélange dans une casserole avec un filet de lait et 40g de beurre demi-sel.",
+          "Faire chauffer à feu moyen pendant environ 5 minutes en fouettant bien vigoureusement jusqu'à épaississement.",
+          "Une fois la pâte cuite, venir tapisser généreusement la tarte avec cette préparation épaissie.",
+          "Laisser refroidir à température ambiante, puis placer au frigo pendant environ 2 heures.",
+          "Préparer la 'gentilly' : dans un saladier, verser 25 cl de crème fraîche 30% et un sachet de sucre vanillé, puis fouetter énergiquement avec un fouet classique.",
+          "Couper la tarte en triangles, ajouter énormément d'amour, un peu de détermination, napper de 'gentilly' et déguster à la cuillère !"
+        ]
+      },
+      {
+        id: 11,
+        themeClass: "theme-fastycrousty",
+        badgeText: "fastycrousty",
+        bannerDecor: "🔥 ◈ ✦ FASTY CROUSTY & SAUCE SPÉCIALE ✦ ◈ 🔥",
+        titre: "fastycrousty",
+        image: "fastycrousty.png",
+        tempsPrepa: "25 min",
+        tempsCuisson: "12 min",
+        portionsBase: 3,
+        portionsActuelles: 3,
+        macrosParPortion: {
+          calories: 620,
+          cal100g: 195,
+          proteines: 42,
+          glucides: 55,
+          lipides: 24
+        },
+        disclaimer: "⚠️ <em>Poulet bien croustillant au panko, lit de riz basmati et sauce blanche crémeuse à l'aigre-douce.</em>",
+        motifsDecor: {
+          glyphes: "🔥 ◈ ✦ ◈ 🔥",
+          sub: "• ─── 🍗 ─── •"
+        },
+        ingredients: [
+          { qte: 500, unite: "g", nom: "escalopes de poulet" },
+          { qte: 1, unite: "c. à soupe", nom: "sel, poivre, gingembre, paprika et ail semoule" },
+          { qte: 2, unite: "c. à soupe", nom: "sauce soja salée" },
+          { qte: 200, unite: "g", nom: "farine" },
+          { qte: 2, unite: "", nom: "œufs" },
+          { qte: 1, unite: "filet", nom: "lait" },
+          { qte: 150, unite: "g", nom: "panko (chapelure japonaise)" },
+          { qte: 1, unite: "pot", nom: "yaourt grec" },
+          { qte: 2, unite: "c. à soupe", nom: "sauce aigre-douce" },
+          { qte: 1, unite: "grosse c.", nom: "mayonnaise" },
+          { qte: 1, unite: "botte", nom: "ciboulette ou persillade" },
+          { qte: 300, unite: "g", nom: "riz basmati cuit" },
+          { qte: 1, unite: "poignée", nom: "oignons frits" }
+        ],
+        etapes: [
+          "Assaisonner 500g d'escalopes de poulet avec du sel, du poivre, une cuillère de gingembre en poudre, de paprika, d'ail semoule et de sauce soja salée.",
+          "Préparer la station de panure : dans un saladier, mélanger 200g de farine, 2 œufs, les mêmes épices et un filet de lait pour lier légèrement.",
+          "Tremper les morceaux de poulet marinés dans la préparation liquide, puis les enrober généreusement de panko (chapelure japonaise) dans une assiette en tassant bien.",
+          "Faire frire le poulet dans une huile bien chaude à feu moyen pendant environ 10 minutes pour bien cuire l'intérieur tout en obtenant une croûte bien dorée.",
+          "Préparer la sauce : dans un bol, détendre le yaourt grec avec un peu de sauce soja (pour éviter les grumeaux), puis ajouter la sauce aigre-douce, une bonne cuillère de mayonnaise et de la ciboulette ciselée.",
+          "Dresser l'assiette avec un lit de riz basmati cuit, napper généreusement de sauce spéciale, disposer le poulet coupé en morceaux par-dessus, rajouter un filet de sauce aigre-douce, de la ciboulette, de la persillade et des oignons frits. Se régaler !"
+        ]
+      },
+      {
+        id: 12,
+        themeClass: "theme-patethon",
+        badgeText: "patethon",
+        bannerDecor: "🍝 ◈ ✦ SPAGHETTI AU THON & CRÈME FONDANTE ✦ ◈ 🍝",
+        titre: "patethon",
+        image: "patethon.png",
+        tempsPrepa: "10 min",
+        tempsCuisson: "12 min",
+        portionsBase: 2,
+        portionsActuelles: 2,
+        macrosParPortion: {
+          calories: 540,
+          cal100g: 185,
+          proteines: 28,
+          glucides: 62,
+          lipides: 20
+        },
+        disclaimer: "⚠️ <em>Spaghetti enrobés d'une sauce onctueuse au thon, oignons sués, persillade et fromage fondant.</em>",
+        motifsDecor: {
+          glyphes: "🍝 ◈ ✦ ◈ 🍝",
+          sub: "• ─── 🐟 ─── •"
+        },
+        ingredients: [
+          { qte: 1, unite: "bonne poignée", nom: "spaghetti" },
+          { qte: 1, unite: "filet", nom: "huile de tournesol" },
+          { qte: 1, unite: "", nom: "oignon rouge (coupé en dés)" },
+          { qte: 1, unite: "boîte", nom: "thon à l'huile (légèrement égoutté)" },
+          { qte: 1, unite: "botte", nom: "persillade" },
+          { qte: 40, unite: "g", nom: "fromage fondant (mozzarella ou comté râpé)" },
+          { qte: 1, unite: "brique", nom: "crème fraîche 12%" },
+          { qte: 1, unite: "louche", nom: "eau de cuisson des pâtes" },
+          { qte: 1, unite: "pincée", nom: "piment d'Espelette" }
+        ],
+        etapes: [
+          "Plonger une bonne grosse poignée de spaghetti dans de l'eau bouillante salée et cuire selon les instructions.",
+          "Dans une poêle, verser un filet d'huile de tournesol et faire suer l'oignon rouge coupé en dés.",
+          "Ajouter le thon à l'huile légèrement égoutté et de la persillade. Mélanger et laisser cuire quelques minutes.",
+          "Incorporer le fromage fondant (mozzarella ou comté) ainsi que la crème fraîche 12 % (une brique ou une demi-brique).",
+          "Ajouter une louche de eau de cuisson des pâtes pour lier et lisser parfaitement toute la sauce.",
+          "Laisser mijoter quelques minutes à feu doux.",
+          "Servir la sauce onctueuse directement sur les spaghetti chauds, puis parsemer d'un peu de piment d'Espelette et de persillade."
+        ]
+      },
+      {
+        id: 13,
+        themeClass: "theme-koka",
+        badgeText: "🇩🇿 SPÉCIALITÉ ALGÉRIENNE • KOKA TRADITIONNELLE 🇩🇿",
+        bannerDecor: "🫒 ◈ ✦ FEUILLETÉ MOELLEUX & SAUCE TOMATE MAISON ✦ ◈ 🫒",
+        titre: "koka",
+        image: "koka.png",
+        tempsPrepa: "30 min",
+        tempsCuisson: "22 min",
+        portionsBase: 4,
+        portionsActuelles: 4,
+        macrosParPortion: {
+          calories: 420,
+          cal100g: 175,
+          proteines: 11,
+          glucides: 58,
+          lipides: 15
+        },
+        disclaimer: "⚠️ <em>Délicieuse koka algérienne en carrés garnis d'une sauce tomate aux oignons, surmontés d'une olive et servis avec un soupçon de mayonnaise.</em>",
+        motifsDecor: {
+          glyphes: "🫒 ◈ ✦ ◈ 🫒",
+          sub: "• ─── 🍅 ─── •"
+        },
+        ingredients: [
+          { qte: 200, unite: "g", nom: "farine" },
+          { qte: 130, unite: "g", nom: "semoule fine" },
+          { qte: 40, unite: "ml", nom: "eau" },
+          { qte: 100, unite: "ml", nom: "lait" },
+          { qte: 10, unite: "g", nom: "levure de boulanger fraîche" },
+          { qte: 1, unite: "c. à café", nom: "sel" },
+          { qte: 1, unite: "c. à café", nom: "sucre" },
+          { qte: 3, unite: "c. à soupe", nom: "huile d'olive" },
+          { qte: 1, unite: "", nom: "œuf" },
+          { qte: 1, unite: "", nom: "oignon" },
+          { qte: 2, unite: "", nom: "gousses d'ail" },
+          { qte: 1, unite: "boîte", nom: "concassé de tomates" },
+          { qte: 1, unite: "c. à soupe", nom: "concentré de tomate" },
+          { qte: 1, unite: "botte", nom: "persil et herbes de Provence" },
+          { qte: 0.5, unite: "c. à café", nom: "sucre (pour la sauce)" },
+          { qte: 1, unite: "poignée", nom: "olives noires ou vertes" },
+          { qte: 1, unite: "filet", nom: "mayonnaise (optionnel)" }
+        ],
+        etapes: [
+          "Dans un grand saladier, mélanger la farine et la semoule fine.",
+          "Dans le lait tiède, délayer la levure fraîche avec une cuillère à café de sucre et laisser s'activer.",
+          "Ajouter le sel dans le mélange de farines, puis l'huile d'olive (2-3 cuillères à soupe), l'œuf, le mélange de lait et de levure, et un tout petit peu d'eau.",
+          "Pétrir vigoureusement jusqu'à obtenir une boule de pâte souple et homogène, puis laisser reposer 1 heure sous un torchon.",
+          "Préparer la sauce tomate : faire revenir l'oignon émincé et l'ail écrasé dans un filet d'huile d'olive.",
+          "Ajouter la boîte de concassé de tomates et le concentré de tomate. Laisser bien réduire quelques minutes.",
+          "Parfumer avec le persil, les herbes de Provence, le sel et une demi-cuillère à café de sucre pour casser l'acidité.",
+          "Dégazer la pâte après son repos, l'étaler sur une plaque carrée recouverte de papier de cuisson, puis piquer le fond avec une fourchette pour éviter qu'elle ne gonfle trop.",
+          "Napper uniformément avec la sauce tomate préparée, puis disposer les olives en espaçant bien pour former des carrés visuels.",
+          "Enfourner à 200°C pendant 20 à 25 minutes en surveillant bien la cuisson et la coloration. Découper en carrés, ajouter un petit filet de mayonnaise et déguster !"
+        ]
+      }
+    ];
+
+    let recettesActives = [...toutesLesRecettes];
+    let pageIndex = 0;
+
+    function filtrerGrimoire() {
+      const search = document.getElementById('grimoireSearch').value.toLowerCase().trim();
+      recettesActives = toutesLesRecettes.filter(r => {
+        return r.titre.toLowerCase().includes(search) ||
+               r.ingredients.some(i => i.nom.toLowerCase().includes(search));
+      });
+
+      pageIndex = 0;
+      afficherDoublePage('next');
+    }
+
+    function modifierPortions(delta) {
+      const rec = recettesActives[pageIndex];
+      if (rec && rec.portionsActuelles + delta >= 1) {
+        rec.portionsActuelles += delta;
+        afficherDoublePage();
+      }
+    }
+
+    function changerPageLateral(direction) {
+      const nouveau = pageIndex + direction;
+      if (nouveau < 0 || nouveau >= recettesActives.length) return;
+
+      playSoftPageTurnSound();
+
+      pageIndex = nouveau;
+      
+      // Son Undertale uniquement pour Toriel (ID 10)
+      if (recettesActives[pageIndex].id === 10) {
+        playUndertaleSound();
+      }
+
+      afficherDoublePage(direction > 0 ? 'next' : 'prev');
+    }
+
+    function afficherDoublePage(transitionDir = '') {
+      const spreadEl = document.getElementById('recipeSpread');
+      const bookWrapper = document.getElementById('bookWrapper');
+      const tabPrev = document.getElementById('tabPrev');
+      const tabNext = document.getElementById('tabNext');
+      const mBtnPrev = document.getElementById('mBtnPrev');
+      const mBtnNext = document.getElementById('mBtnNext');
+      const mPageCount = document.getElementById('mPageCount');
+
+      if (recettesActives.length === 0) {
+        spreadEl.innerHTML = `
+          <div style="grid-column: span 2; text-align: center; padding: 70px 20px; color: var(--ink-muted);">
+            <p style="font-size: 2.2rem; margin-bottom: 12px;">🕯️</p>
+            <h2 style="font-family: 'Cinzel', serif; font-size: 1.5rem; margin-bottom: 8px; color: var(--theme-leather-1);">Aucune recette trouvée</h2>
+            <p style="font-style: italic;">Aucune page du grimoire ne correspond à ces termes.</p>
+          </div>
+        `;
+        tabPrev.classList.add('disabled');
+        tabNext.classList.add('disabled');
+        mBtnPrev.disabled = true;
+        mBtnNext.disabled = true;
+        mPageCount.innerText = "0 / 0";
+        return;
+      }
+
+      const r = recettesActives[pageIndex];
+
+      bookWrapper.className = `book-wrapper ${r.themeClass}`;
+      document.body.className = r.themeClass;
+      document.getElementById('headerBadge').innerHTML = r.badgeText;
+      document.getElementById('themeBanner').innerHTML = r.bannerDecor;
+
+      spreadEl.classList.remove('turn-next-anim', 'turn-prev-anim');
+      void spreadEl.offsetWidth;
+      if (transitionDir === 'next') spreadEl.classList.add('turn-next-anim');
+      if (transitionDir === 'prev') spreadEl.classList.add('turn-prev-anim');
+
+      const ratio = r.portionsActuelles / r.portionsBase;
+
+      const isFirst = (pageIndex === 0);
+      const isLast = (pageIndex === recettesActives.length - 1);
+
+      if (isFirst) tabPrev.classList.add('disabled');
+      else tabPrev.classList.remove('disabled');
+
+      if (isLast) tabNext.classList.add('disabled');
+      else tabNext.classList.remove('disabled');
+
+      mBtnPrev.disabled = isFirst;
+      mBtnNext.disabled = isLast;
+      mPageCount.innerText = `${pageIndex + 1} / ${recettesActives.length}`;
+
+      const htmlIngredients = r.ingredients.map(ing => {
+        let quantite = "";
+        if (ing.qte) {
+          const val = Math.round(ing.qte * ratio * 10) / 10;
+          quantite = `<strong>${val} ${ing.unite}</strong> `;
+        }
+        return `<li>${quantite}${ing.nom}</li>`;
+      }).join('');
+
+      const htmlEtapes = r.etapes.map(e => `<li>${e}</li>`).join('');
+
+      spreadEl.innerHTML = `
+        <!-- PAGE DE GAUCHE -->
+        <div class="page-leaf page-leaf-left">
+          <div class="page-header-side">
+            <h2 class="recipe-title">${r.titre}</h2>
+            <span class="page-indicator">Feuillet ${pageIndex + 1} / ${recettesActives.length}</span>
+          </div>
+
+          <div class="recipe-image-wrap">
+            <img src="${r.image}" alt="${r.titre}" onerror="this.parentElement.style.display='none'"/>
+          </div>
+
+          <div class="recipe-meta">
+            <span>⏱️ Prépa : ${r.tempsPrepa}</span>
+            <span>🔥 Cuisson : ${r.tempsCuisson}</span>
+            <span>
+              👥 Portions : 
+              <div class="portions-control">
+                <button class="btn-portion" onclick="modifierPortions(-1)">-</button>
+                <strong style="min-width: 14px; text-align:center;">${r.portionsActuelles}</strong>
+                <button class="btn-portion" onclick="modifierPortions(1)">+</button>
+              </div>
+            </span>
+          </div>
+
+          <div class="macros-bar">
+            <div>
+              <div class="macro-label">Énergie</div>
+              <div class="macro-value">${r.macrosParPortion.calories} kcal</div>
+              <div class="macro-sub">~${r.macrosParPortion.cal100g} / 100g</div>
+            </div>
+            <div>
+              <div class="macro-label">Protéines</div>
+              <div class="macro-value">${r.macrosParPortion.proteines} g</div>
+              <div class="macro-sub">par part</div>
+            </div>
+            <div>
+              <div class="macro-label">Glucides</div>
+              <div class="macro-value">${r.macrosParPortion.glucides} g</div>
+              <div class="macro-sub">par part</div>
+            </div>
+            <div>
+              <div class="macro-label">Lipides</div>
+              <div class="macro-value">${r.macrosParPortion.lipides} g</div>
+              <div class="macro-sub">par part</div>
+            </div>
+          </div>
+
+          <div class="macro-disclaimer">${r.disclaimer}</div>
+
+          <h3 class="section-title">🌾 Ingrédients</h3>
+          <ul class="ingredient-list">${htmlIngredients}</ul>
+        </div>
+
+        <!-- PAGE DE DROITE -->
+        <div class="page-leaf page-leaf-right">
+          <div>
+            <div class="page-header-side">
+              <h3 class="section-title" style="border-bottom:none; margin:0; padding:0;">✨ Préparation</h3>
+              <span class="page-indicator" style="opacity:0.6;">Instructions</span>
+            </div>
+            <ol class="steps-list" style="margin-top: 6px;">${htmlEtapes}</ol>
+          </div>
+
+          <div class="steps-bottom-decor">
+            <div class="decor-divider-line">
+              <span class="decor-glyphs">${r.motifsDecor.glyphes}</span>
+            </div>
+            <span class="decor-sub-motifs">${r.motifsDecor.sub}</span>
+          </div>
+        </div>
+      `;
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (document.activeElement.tagName === 'INPUT') return;
+      if (e.key === 'ArrowRight') changerPageLateral(1);
+      if (e.key === 'ArrowLeft') changerPageLateral(-1);
+    });
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    const spreadWrapper = document.getElementById('recipeSpread');
+
+    spreadWrapper.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    spreadWrapper.addEventListener('touchend', e => {
+      const touchEndX = e.changedTouches[0].screenX;
+      const touchEndY = e.changedTouches[0].screenY;
+      const diffX = touchStartX - touchEndX;
+      const diffY = touchStartY - touchEndY;
+
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 45) {
+        if (diffX > 0) changerPageLateral(1);
+        else changerPageLateral(-1);
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>
